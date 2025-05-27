@@ -2,11 +2,95 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventRegistration.View.ContractedEvent"
-             Title="ContractedEvent">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+             Background="{StaticResource background}"
+             >
+
+    <Grid
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+        <Image Source="bg.png"/>
+
+        <VerticalStackLayout 
+        Spacing="10"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+            <Label 
+            Padding="15"
+            Text="Registrar novo Evento:"
+            TextColor="{StaticResource Primary}"
+            FontFamily="roboto_bold"
+            FontSize="Title"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+            <Frame
+             BorderColor="{StaticResource Primary}"
+             Padding="10"
+             Background="{StaticResource Primary}"
+            >
+                <VerticalStackLayout
+                Spacing="15"
+                >
+                    <Entry
+                    FontFamily="roboto"
+                    x:Name="campo_nome_evento"
+                    Background="{StaticResource background}"
+                    TextColor="Black"
+                    PlaceholderColor="Black"
+                    Placeholder="Nome do Evento"/>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <DatePicker
+                        x:Name="start_data_event"
+                        TextColor="Black"
+                        Background="{StaticResource background}"
+                        />
+
+                        <Label 
+                        VerticalOptions="Center" 
+                        Text="Data inicio Evento" 
+                        FontFamily="roboto_bold"/>
+                    </HorizontalStackLayout>
+
+
+
+                    <HorizontalStackLayout 
+                    Spacing="15">
+                        <DatePicker
+                        x:Name="end_data_event"
+                       TextColor="Black"
+                       Background="{StaticResource background}"
+                        />
+
+                        <Label 
+                        VerticalOptions="Center"
+                        Text="Data final do Evento" 
+                        FontFamily="roboto_bold"/>
+                    </HorizontalStackLayout>
+
+                    <Entry 
+                    x:Name="numberOfAttendees"
+                    Keyboard="Numeric"
+                    Background="{StaticResource background}"
+                    TextColor="Black"
+                    PlaceholderColor="Black"
+                    FontFamily="roboto"
+                    Placeholder="Numero de participantes"/>
+
+                    <Entry 
+                     x:Name="location"
+                     Background="{StaticResource background}"
+                     TextColor="Black"
+                     PlaceholderColor="Black"
+                     FontFamily="roboto"
+                     Placeholder="Endereço do evento"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button 
+            Clicked="Button_Clicked"
+            BackgroundColor="{StaticResource Secondary}"
+            Text="contratar evento"/>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>
