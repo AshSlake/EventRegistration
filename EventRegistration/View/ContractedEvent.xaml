@@ -44,6 +44,7 @@
                         x:Name="start_data_event"
                         TextColor="Black"
                         Background="{StaticResource background}"
+                        Format="dd/mm/yyyy"
                         />
 
                         <Label 
@@ -60,6 +61,7 @@
                         x:Name="end_data_event"
                        TextColor="Black"
                        Background="{StaticResource background}"
+                       Format="dd/mm/yyyy"
                         />
 
                         <Label 

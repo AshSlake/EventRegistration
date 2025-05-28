@@ -2,11 +2,121 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EventRegistration.View.EventHiring"
-             Title="EventHiring">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Background="{StaticResource background}">
+    <VerticalStackLayout 
+       Padding="15"
+        VerticalOptions="Center">
+        <Grid >
+            <Image Source="bg.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <VerticalStackLayout
+                Spacing="15"
+                >
+                <Label
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    Text="{Binding name}"
+                    FontFamily="roboto_bold"
+                    FontSize="Title"/>
+
+                <Frame 
+                    BackgroundColor="{StaticResource Primary}"
+                    >
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label 
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="Data de inicio:"/>
+
+                            <Label
+                                TextColor="Black"
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="{Binding dataStartEvent}"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="10">
+                            <Label 
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="Data de encerramento:"/>
+                            <Label
+                                TextColor="Black"
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="{Binding dataEndEvent}"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Label 
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="Quantidade de pessoas:"/>
+                            <Label
+                                TextColor="Black"
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="{Binding numberOfAttendees}"/>
+                        </HorizontalStackLayout>
+
+                        <VerticalStackLayout
+                            Spacing="10">
+                            <Label 
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="Localização do evento:"/>
+                            <Label
+                                TextColor="Black"
+                                FontFamily="roboto"
+                                FontSize="15"
+                                Text="{Binding location}"/>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="{StaticResource Gray900}">
+                    <HorizontalStackLayout Spacing="20">
+                        <Label
+                            TextColor="WhiteSmoke"
+                            Text="Total a ser pago:"/>
+
+                        <Label
+                            TextColor="{StaticResource Primary}"
+                            Text="{Binding totalPriceFromEvent}"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <HorizontalStackLayout 
+                    HorizontalOptions="Center"
+                    Spacing="20">
+
+                    <Button
+                        Clicked="Button_Clicked_1"
+                    FontFamily="roboto"
+                    Text="Cancelar evento"
+                    TextColor="White"
+                    />
+
+                    <Button
+                        Clicked="Button_Clicked"
+                    TextColor="White"
+                    FontFamily="roboto"
+                    Text="Finalizar Contratação"
+                    />
+                </HorizontalStackLayout>
+
+                <Label
+                    Padding="35"
+                    TextColor="Black"
+                    Text="Ao confirmar a contratação do evento você automaticamente concorda com nossos termos de uso e políticas de privacidade."
+                    FontFamily="roboto_bold"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap"
+                    WidthRequest="350"/>
+            </VerticalStackLayout>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
